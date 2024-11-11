@@ -1,0 +1,26 @@
+<odoo>
+    <template id="TempViewTemplate" name="Grind Shop OWL Template">
+        <div class="container">
+            <div class="card">
+                <button class="btn btn-primary" t-on-click="() => toggleView('products')">Products</button>
+                <button class="btn btn-secondary" t-on-click="() => toggleView('menus')">Menus</button>
+            </div>
+            <div t-if="state.showProducts=='True'">
+                <!-- Display Products dynamically from the context -->
+                <t t-foreach="props.category_inventory_ids" t-as="product">
+                    <div class="card mt-2">
+                        <span><t t-esc="product.name"/></span>
+                    </div>
+                </t>
+            </div>
+            <div t-if="state.showProducts=='False'">
+                <!-- Display Menus dynamically from the context -->
+                <t t-foreach="props.category_ingredient_ids" t-as="menu">
+                    <div class="card mt-2">
+                        <span><t t-esc="menu.name"/></span>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </template>
+</odoo>
