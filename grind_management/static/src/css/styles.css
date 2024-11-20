@@ -102,3 +102,49 @@ body {
 #checkout-btn:hover {
     background-color: #e68900;
 }
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.item-name {
+    flex: 2;
+    text-align: left;
+}
+
+.item-price {
+    flex: 1;
+    text-align: right;
+}
+
+.quantity-control {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn {
+    flex: 0.5;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+.quantity {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.increase-quantity {
+    height: 40px;
+}
+
+.decrease-quantity {
+    height: 40px;   
+}
