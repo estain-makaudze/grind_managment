@@ -15,7 +15,7 @@
                         </div>
                         <group>
                             <group>
-                                <field name="menu_code"/>
+<!--                                <field name="menu_code"/>-->
                                 <field name="sale_price"/>
                                 <field name="cost_price"/>
                                 <field name="currency_id"/>

@@ -28,7 +28,7 @@ class GrindInventory(models.Model):
                                          ('ingredient', 'Ingredient'),
                                          ('both_product_ingredient', 'Both Shop Product & Ingredient'),
                                          ],
-                                        'Inventory Type', required=True,)
+                                        'Inventory Type')
     menu_id = fields.Many2one('grind_menu.model', string="Menu",)
 
 

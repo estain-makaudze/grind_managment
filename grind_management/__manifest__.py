@@ -26,14 +26,13 @@
         'views/grind_inventory_category.xml',
         'views/grind_inventory_uom.xml',
         'views/grind_inventory_supplier.xml',
-        'views/grind_pos_portal_controller.xml',
-        'views/temp_view.xml',
+        'views/grind_shop_template.xml',
     ],
-    'assets': {
-        'web.assets_backend': [
-            'grind_management/static/src/js/category_products_template.js',
-        ],
-    },
+    # 'assets': {
+    #     'web.assets_backend': [
+    #         'grind_management/static/src/js/category_products_template.js',
+    #     ],
+    # },
     'installable': True,
     'application': True,
     'license': 'LGPL-3',

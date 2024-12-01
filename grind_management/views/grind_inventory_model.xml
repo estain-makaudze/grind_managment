@@ -18,18 +18,18 @@
                         </div>
                         <group>
                             <group>
-                                <field name="item_code"/>
+<!--                                <field name="item_code"/>-->
                                 <field name="supplier_id"/>
-                                <field name="inventory_type"/>
+<!--                                <field name="inventory_type"/>-->
                                 <field name="cost_price"/>
-                                <field name="sale_price"  attrs="{'invisible': [('inventory_type', '=', 'ingredient')]}"/>
+                                <field name="sale_price"/>
                                 <field name="currency_id" invisible="1"/>
                                 <field name="quantity_available"/>
                                 <field name="grind_inventory_uom_id"/>
 <!--                                <field name="uom_id"/>-->
                             </group>
                             <group>
-                                <field name="category_id"/>
+<!--                                <field name="category_id"/>-->
                                 <field name="reorder_quantity"/>
 <!--                                <field name="category_id"/>-->
                                 <field name="date_added"/>
