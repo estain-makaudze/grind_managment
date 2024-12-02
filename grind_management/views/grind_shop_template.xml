@@ -114,8 +114,8 @@
                             <p class="h6 mb-0">Total Items: <span  id="total-quantity"  class="fw-bold">0</span></p>
                           </div>
                           <div class="d-flex justify-content-end gap-2">
-                            <button class="btn btn-sm btn-success">Check Out</button>
-                            <button type="button" class="btn btn-sm btn-danger">Clear All</button>
+                            <button type="button" id="checkout-btn" class="btn btn-sm btn-success">Check Out</button>
+                            <button type="button" id="clear-cart-btn" class="btn btn-sm btn-danger">Clear All</button>
                           </div>
                         </div>
 

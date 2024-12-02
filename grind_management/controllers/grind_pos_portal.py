@@ -48,6 +48,24 @@ class GrindPortalPos(http.Controller):
             }),
             headers={'Content-Type': 'application/json'}
         )
+    
+    @http.route('/checkout', type='json', auth='user', csrf=False, methods=['POST'])
+    def checkout(self):
+        print('!!!!!!!!!!!!!!!!!!!!!!!Checkout')
+        # order = request.env['grind_order.model'].create({
+        #     'order_date': fields.Date.today(),
+        #     'order_status': 'draft',
+        # })
+
+        data = http.request.params
+        print(data)
+        
+        return request.make_response(
+            json.dumps({
+                'message': 'Checkout successful'
+            }),
+            headers={'Content-Type': 'application/json'}
+        )
 
 #     @http.route('/grind_management/grind_management/objects', auth='public')
 #     def list(self, **kw):

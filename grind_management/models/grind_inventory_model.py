@@ -11,7 +11,7 @@ class GrindInventory(models.Model):
     _description = 'Grind Inventory'
 
     name = fields.Char(string="Item Name", required=True)
-    item_code = fields.Char(string="Item Code", required=True, help="Unique identifier for each item")
+    item_code = fields.Char(string="Item Code", help="Unique identifier for each item")
     category_id = fields.Many2one('grind_inventory.category', string="Category", help="Category the item belongs to")
     supplier_id = fields.Many2one('grind_inventory.supplier', string="Supplier", help="Supplier of the item")
     currency_id = fields.Many2one('res.currency', string="Currency")

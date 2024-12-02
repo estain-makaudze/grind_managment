@@ -54,6 +54,7 @@ async function displayProducts() {
               </div>
             </div>
         `;
+
         productDiv.addEventListener('click', () => addToCart(product));
         productContainer.appendChild(productDiv);
     });
@@ -63,6 +64,10 @@ document.getElementById('inventory-btn').addEventListener('click', () => {
     currentCategory = 'Inventory';
     displayProducts();
 });
+
+// click a link with class inventory-btn click event
+let inventory_btn = document.getElementById('inventory-btn');
+inventory_btn.click();
 
 document.getElementById('menu-btn').addEventListener('click', () => {
     currentCategory = 'Menu';
@@ -130,12 +135,44 @@ function updateCart() {
     totalQuantityElement.textContent = total_quantity;
 }
 
-document.getElementById('checkout-btn').addEventListener('click', () => {
+
+let checkoutButton = document.getElementById('checkout-btn')
+checkoutButton.addEventListener('click', () => {
     if (cart.length === 0) {
         return alert('Cart is empty! Please add items to cart before checking out.');
     }
 
-    alert(`Checkout successful! Total amount: $${totalPriceElement.textContent}`);
+    // create order id from current date and time
+    const orderId = Date.now();
+    const order = { "params" : {
+        "orderId": orderId,
+        "cart": cart,
+        "total": parseFloat(totalPriceElement.textContent)
+        }
+    }
+
+    fetch('/checkout', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(order),
+    }).then(response => {
+        if (response.ok) {
+            alert('Order placed successfully!');
+            cart = [];
+            updateCart();
+        } else {
+            alert('Failed to place order');
+        }
+    });
+
+    cart = [];
+    updateCart();
+});
+
+document.getElementById('clear-cart-btn').addEventListener('click', () => {
+    console.log('Clearing cart');
     cart = [];
     updateCart();
 });
