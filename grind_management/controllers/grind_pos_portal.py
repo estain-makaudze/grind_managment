@@ -51,7 +51,10 @@ class GrindPortalPos(http.Controller):
     
     @http.route('/checkout', type='json', auth='user', csrf=False, methods=['POST'])
     def checkout(self):
-        print('!!!!!!!!!!!!!!!!!!!!!!!Checkout')
+        #RECORD A TRANSACTION IN SALES
+        #RECORD A TRANSACTION IN INVENTORY
+        #RECORD A TRANSACTION IN EMPLOYEE EXPENSES
+
         # order = request.env['grind_order.model'].create({
         #     'order_date': fields.Date.today(),
         #     'order_status': 'draft',
@@ -66,6 +69,14 @@ class GrindPortalPos(http.Controller):
             }),
             headers={'Content-Type': 'application/json'}
         )
+
+    @http.route('/grind_shop/scan_qr', type='json', auth='user', csrf=False, methods=['POST', 'GET'])
+    def grind_shop_scan_qr(self):
+        cart = http.request.params
+
+        return request.render('grind_management.grind_checkout_qr_code_scan', {
+            'cart': cart,
+        })
 
 #     @http.route('/grind_management/grind_management/objects', auth='public')
 #     def list(self, **kw):

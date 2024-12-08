@@ -151,7 +151,7 @@ checkoutButton.addEventListener('click', () => {
         }
     }
 
-    fetch('/checkout', {
+    fetch('/grind_shop/scan_qr', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

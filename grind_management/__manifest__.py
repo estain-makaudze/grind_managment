@@ -27,6 +27,7 @@
         'views/grind_inventory_uom.xml',
         'views/grind_inventory_supplier.xml',
         'views/grind_shop_template.xml',
+        'views/grind_checkout_qr_code_scan.xml',
     ],
     # 'assets': {
     #     'web.assets_backend': [
