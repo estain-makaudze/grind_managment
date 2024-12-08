@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="billing_tariff_model_tree_view" model="ir.ui.view">
+            <field name="name">billing_tariff.model.tree</field>
+            <field name="model">billing_tariff.model</field>
+            <field name="arch" type="xml">
+                <tree string="Shuttle Billing Tariff" editable="top">
+                    <field name="distance"/>
+                    <field name="price"/>
+                    <field name="currency_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="billing_tariff_model_act_window" model="ir.actions.act_window">
+            <field name="name">Shuttle Billing Tariff</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">billing_tariff.model</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem name="Shuttle Billing Tariff" id="billing_tariff_model_menu" parent="shuttle_settings_menu" action="billing_tariff_model_act_window"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_upload_external_shuttle_schedules_wizard_form" model="ir.ui.view">
+        <field name="name">upload_external_shuttle_schedules.wizard.form</field>
+        <field name="model">upload_external_shuttle_schedules.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Upload External Shuttle Onboard History">
+                <group>
+                    <field name="excell_sheet" filename="excell_name"/>
+                    <field name="excell_name"  invisible="1"/>
+                </group>
+                <footer>
+                    <button name="upload_external_shuttle_schedules" string="Upload" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="upload_external_shuttle_onboard_history_wizard" model="ir.actions.act_window">
+        <field name="name">Upload External Shuttle Onboard History</field>
+        <field name="res_model">upload_external_shuttle_schedules.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context"></field>
+    </record>
+
+    <menuitem name="Upload External Shuttle Onboard History"  id="upload_external_shuttle_onboard_history_wizard_menu" parent="shuttle_settings_menu" action="upload_external_shuttle_onboard_history_wizard" sequence="4" />
+
+
+</odoo>

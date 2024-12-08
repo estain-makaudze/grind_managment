@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="upload_old_qr_code_wizard_form" model="ir.ui.view">
+        <field name="name">upload_old_qr_code.wizard.form</field>
+        <field name="model">upload_old_qr_code.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Upload Old QR Codes">
+                <group>
+                    <field name="excell_sheet"/>
+                </group>
+                <footer>
+                    <button name="upload_old_qr_code" string="Upload Old QR Codes" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_upload_old_qr_code_wizard" model="ir.actions.act_window">
+        <field name="name">Upload Old QR Codes</field>
+        <field name="res_model">upload_old_qr_code.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context"></field>
+    </record>
+    <menuitem name="Upload Old QR Codes"  id="upload_old_qr_code_menu" parent="shuttle_settings_menu" action="action_upload_old_qr_code_wizard" sequence="5" />
+
+
+</odoo>
