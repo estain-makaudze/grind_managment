@@ -20,6 +20,7 @@
               .row.content {height: auto;}
             }
           </style>
+          <link rel="stylesheet" type="text/css" href="/grind_management/static/src/css/styles.css"/>
         </head>
         <body>
           <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
@@ -47,6 +48,13 @@
           <section class="container my-4">
               <div class="row content h-100">
                    <!-- Main Content: Categories and Products -->
+
+                <div id="qrModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">X</span>
+                        <div id="qr-reader" style="width: 100%;"></div>
+                    </div>
+                </div>
                    <div class="col-lg-8">
                       <div class="well pt-4">
                         <h4>Categories</h4>
@@ -124,7 +132,12 @@
                   </div>
               </div>
           </section>
+
+          
           <script type="text/javascript" src="/grind_management/static/src/js/category_products_template.js"></script>
+          <script src="https://unpkg.com/html5-qrcode"></script>
+
+          <script type="text/javascript" src="/grind_management/static/src/js/checkout.js"> </script>
         </body>
 
     </template>

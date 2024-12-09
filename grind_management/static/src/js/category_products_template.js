@@ -76,6 +76,7 @@ document.getElementById('menu-btn').addEventListener('click', () => {
 
 // Rest of the cart functionality remains the same
 function addToCart(product) {
+    console.log('Adding to cart:', product);
     const existingItem = cart.find(item => item.name === product.name);
     if (existingItem) {
         existingItem.quantity += 1;
@@ -134,42 +135,6 @@ function updateCart() {
     totalPriceElement.textContent = total.toFixed(2);
     totalQuantityElement.textContent = total_quantity;
 }
-
-
-let checkoutButton = document.getElementById('checkout-btn')
-checkoutButton.addEventListener('click', () => {
-    if (cart.length === 0) {
-        return alert('Cart is empty! Please add items to cart before checking out.');
-    }
-
-    // create order id from current date and time
-    const orderId = Date.now();
-    const order = { "params" : {
-        "orderId": orderId,
-        "cart": cart,
-        "total": parseFloat(totalPriceElement.textContent)
-        }
-    }
-
-    fetch('/grind_shop/scan_qr', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(order),
-    }).then(response => {
-        if (response.ok) {
-            alert('Order placed successfully!');
-            cart = [];
-            updateCart();
-        } else {
-            alert('Failed to place order');
-        }
-    });
-
-    cart = [];
-    updateCart();
-});
 
 document.getElementById('clear-cart-btn').addEventListener('click', () => {
     console.log('Clearing cart');
