@@ -62,13 +62,12 @@ class GrindPortalPos(http.Controller):
 
         data = http.request.params
         print(data)
-        
-        return request.make_response(
-            json.dumps({
-                'message': 'Checkout successful'
-            }),
-            headers={'Content-Type': 'application/json'}
-        )
+
+        return {
+                'status': 'ok',
+                'data1': 'Some random data'     
+            }
+
 
     @http.route('/grind_shop/scan_qr', type='json', auth='user', csrf=False, methods=['POST', 'GET'])
     def grind_shop_scan_qr(self):
